@@ -38,3 +38,6 @@ hs_err_*.log
 replay_*.log
 *.hprof
 *.jfr
+
+# Source code files that should not be committed
+src/main/java/io/meowshe/mixin/PlayerManagerMixin.java

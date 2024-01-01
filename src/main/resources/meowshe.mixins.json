@@ -3,9 +3,10 @@
   "package": "io.meowshe.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "MinecraftServerMixin",
     "LivingEntityMixin",
+    "MinecraftServerMixin",
     "PlayerEntityMixin",
+    "PlayerManagerMixin",
     "ServerPlayerEntityMixin"
   ],
   "injectors": {
