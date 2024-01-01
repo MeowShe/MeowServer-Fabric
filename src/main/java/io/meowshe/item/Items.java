@@ -1,20 +1,17 @@
-package io.meowshe.helper;
+package io.meowshe.item;
 
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.nbt.NbtString;
-import net.minecraft.text.Text;
 
-public class Science {
-
+public class Items {
     public static final ItemStack SCIENCE_KEEP_INVENTORY;
 
     static {
         // Definition of Science: keepInventory
-        ItemStack science = new ItemStack(Items.PAPER);
+        ItemStack science = new ItemStack(net.minecraft.item.Items.PAPER);
         NbtList tags = new NbtList();
         tags.add(NbtString.of("keepInventory"));
         science.getOrCreateNbt().put("Tag", tags);
@@ -26,10 +23,9 @@ public class Science {
         SCIENCE_KEEP_INVENTORY = science;
     }
 
-    // Science: keepInventory
-    public boolean useScience(PlayerInventory playerInventory, boolean remove) {
+    public static boolean useScience(PlayerInventory playerInventory) {
         if (playerInventory.contains(SCIENCE_KEEP_INVENTORY)) {
-            if (remove) playerInventory.removeStack(playerInventory.getSlotWithStack(SCIENCE_KEEP_INVENTORY),1);
+            playerInventory.removeStack(playerInventory.getSlotWithStack(SCIENCE_KEEP_INVENTORY), 1);
             return true;
         }
         return false;
