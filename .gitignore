@@ -41,3 +41,4 @@ replay_*.log
 
 # Source code files that should not be committed
 src/main/java/io/meowshe/mixin/PlayerManagerMixin.java
+src/main/java/io/meowshe/Config.java

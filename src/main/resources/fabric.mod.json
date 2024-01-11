@@ -3,9 +3,9 @@
 	"id": "meowshe",
 	"version": "${version}",
 	"name": "MeowShe",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "MeowShe Research Server Mod",
 	"authors": [
-		"Me!"
+		"MeowShe Research Team"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",

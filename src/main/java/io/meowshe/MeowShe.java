@@ -16,6 +16,6 @@ public class MeowShe implements ModInitializer {
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
 
-        LOGGER.info("Hello MeowShe!");
+        LOGGER.info("MeowShe & Lampese Minecraft Server Mod.");
     }
 }

@@ -11,14 +11,15 @@ public class Items {
 
     static {
         // Definition of Science: keepInventory
+        // Item: paper{Tag:["keepInventory"],display:{Lore:['{"text": "死亡时保留物品栏", "italic": false}'],Name:'{"text": "秘法古卷", "italic": false, "color": "gold"}'}}
         ItemStack science = new ItemStack(net.minecraft.item.Items.PAPER);
         NbtList tags = new NbtList();
         tags.add(NbtString.of("keepInventory"));
         science.getOrCreateNbt().put("Tag", tags);
         NbtCompound display = science.getOrCreateSubNbt("display");
-        display.putString("Name", "{\"text\": \"Science\", \"italic\": false}");
+        display.putString("Name", "{\"text\": \"秘法古卷\", \"italic\": false, \"color\": \"gold\"}");
         NbtList lore = new NbtList();
-        lore.add(NbtString.of("{\"text\": \"Science\", \"italic\": false}"));
+        lore.add(NbtString.of("{\"text\": \"死亡时保留物品栏\", \"italic\": false}"));
         display.put("Lore", lore);
         SCIENCE_KEEP_INVENTORY = science;
     }
