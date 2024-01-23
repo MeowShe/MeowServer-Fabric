@@ -26,7 +26,14 @@ public class Items {
 
     public static boolean useScience(PlayerInventory playerInventory) {
         if (playerInventory.contains(SCIENCE_KEEP_INVENTORY)) {
-            playerInventory.removeStack(playerInventory.getSlotWithStack(SCIENCE_KEEP_INVENTORY), 1);
+            int slot = playerInventory.getSlotWithStack(SCIENCE_KEEP_INVENTORY);
+            // When slot equals -1, it means the item is in player's offhand.
+            if (slot == -1) {
+                ItemStack itemStack = playerInventory.offHand.get(0);
+                itemStack.setCount(itemStack.getCount() - 1);
+            } else {
+                playerInventory.removeStack(slot, 1);
+            }
             return true;
         }
         return false;

@@ -14,10 +14,7 @@ public abstract class PlayerEntityMixin {
     @Shadow
     public abstract PlayerInventory getInventory();
 
-    @Redirect(method = "dropInventory", at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z"
-    ))
+    @Redirect(method = "dropInventory", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z"))
     public boolean dropInventory(GameRules instance, GameRules.Key<GameRules.BooleanRule> rule) {
         if (rule.getName().equals("keepInventory")) {
             return this.getInventory().contains(Items.SCIENCE_KEEP_INVENTORY);
@@ -25,10 +22,7 @@ public abstract class PlayerEntityMixin {
         return instance.getBoolean(rule);
     }
 
-    @Redirect(method = "getXpToDrop", at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z"
-    ))
+    @Redirect(method = "getXpToDrop", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z"))
     public boolean getXpToDrop(GameRules instance, GameRules.Key<GameRules.BooleanRule> rule) {
         if (rule.getName().equals("keepInventory")) {
             return this.getInventory().contains(Items.SCIENCE_KEEP_INVENTORY);
