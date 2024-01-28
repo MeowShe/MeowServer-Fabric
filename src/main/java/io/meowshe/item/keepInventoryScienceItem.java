@@ -6,7 +6,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.nbt.NbtString;
 
-public class Items {
+public class keepInventoryScienceItem{
     public static final ItemStack SCIENCE_KEEP_INVENTORY;
 
     static {

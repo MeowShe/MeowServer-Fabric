@@ -1,6 +1,6 @@
 package io.meowshe.mixin;
 
-import io.meowshe.item.Items;
+import io.meowshe.item.keepInventoryScienceItem;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.GameRules;
@@ -32,7 +32,7 @@ public class ServerPlayerEntityMixin {
     ))
     public boolean copyFrom(GameRules instance, GameRules.Key<GameRules.BooleanRule> rule) {
         if (rule.getName().equals("keepInventory")) {
-            return Items.useScience(this.serverPlayerEntity.getInventory());
+            return keepInventoryScienceItem.useScience(this.serverPlayerEntity.getInventory());
         }
         return instance.getBoolean(rule);
     }

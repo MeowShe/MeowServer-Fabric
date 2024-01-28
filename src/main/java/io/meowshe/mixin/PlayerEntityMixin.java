@@ -1,6 +1,6 @@
 package io.meowshe.mixin;
 
-import io.meowshe.item.Items;
+import io.meowshe.item.keepInventoryScienceItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.world.GameRules;
@@ -17,7 +17,7 @@ public abstract class PlayerEntityMixin {
     @Redirect(method = "dropInventory", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z"))
     public boolean dropInventory(GameRules instance, GameRules.Key<GameRules.BooleanRule> rule) {
         if (rule.getName().equals("keepInventory")) {
-            return this.getInventory().contains(Items.SCIENCE_KEEP_INVENTORY);
+            return this.getInventory().contains(keepInventoryScienceItem.SCIENCE_KEEP_INVENTORY);
         }
         return instance.getBoolean(rule);
     }
@@ -25,7 +25,7 @@ public abstract class PlayerEntityMixin {
     @Redirect(method = "getXpToDrop", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z"))
     public boolean getXpToDrop(GameRules instance, GameRules.Key<GameRules.BooleanRule> rule) {
         if (rule.getName().equals("keepInventory")) {
-            return this.getInventory().contains(Items.SCIENCE_KEEP_INVENTORY);
+            return this.getInventory().contains(keepInventoryScienceItem.SCIENCE_KEEP_INVENTORY);
         }
         return instance.getBoolean(rule);
     }
